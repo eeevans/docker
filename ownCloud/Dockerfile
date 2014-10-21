@@ -3,6 +3,7 @@ MAINTAINER eeevans "ed.eevans@gmail.com"
 RUN echo "deb http://archive.ubuntu.com/ubuntu precise main universe" >> /etc/apt/sources.list
 RUN apt-get -y update
 
+RUN rm /sbin/initctl
 RUN dpkg-divert --local --rename --add /sbin/initctl
 RUN ln -s /bin/true /sbin/initctl
 
